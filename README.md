@@ -22,4 +22,15 @@ Each screen will have stairs matching the theme of the screen
 NOW 
 HOW DO I BUILD THIS !!
 
+Step 1- 
+
+Strange Places-
+ - In a giants garden
+ - Liminal Office
+ - Tron
+ - Colors 
+ - Lava world
+ - The outer space void 
+
+
 
