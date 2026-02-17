@@ -28,9 +28,9 @@ Strange Places-
  - In a giants garden
  - Liminal Office
  - Tron
- - Colors 
- - Lava world
+ - Underwater
  - The outer space void 
+ - Upside down world
 
 
 
