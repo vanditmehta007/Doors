@@ -23,7 +23,18 @@ class StartScene extends Phaser.Scene {
     super("StartScene");
   }
 
+  preload() {
+    this.load.audio("bgm", "bgm.mp3");
+    this.load.audio("teleport", "woosh.mp3");
+  }
+
   create() {
+    if (!this.sound.get("bgm")) {
+      this.sound.play("bgm", { loop: true, volume: 0.5 });
+    } else if (!this.sound.get("bgm").isPlaying) {
+      this.sound.get("bgm").play({ loop: true, volume: 0.5 });
+    }
+
     const w = GAME_WIDTH;
     const h = GAME_HEIGHT;
 
@@ -472,6 +483,7 @@ class DoorsScene extends Phaser.Scene {
   }
 
   enterPlace(placeId, movePlayerToCenter) {
+    this.sound.play("teleport", { volume: 0.5 });
     this.currentPlaceId = placeId;
     const place = this.placeMap[placeId];
 
