@@ -40,3 +40,8 @@ Only the Golden Door can bridge the gap back to **True Reality**.
 **Controls:**
 - **Move:** WASD or Arrow Keys / Virtual Joystick (Mobile)
 - **Interact:** 'E' Key / Action Button (Mobile)
+
+
+PS - My First game and First Game Jam !!
+
+Created by Vandit Mehta for Brackey's Game Jam 2026.
