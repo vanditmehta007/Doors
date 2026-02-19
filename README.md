@@ -15,7 +15,6 @@ In this unstable state, the universe rejects your presence.
 - A Liminal Office
 - The Grid (Tron)
 - An Underwater Castle
-- The Upside Down
 - Outer Space
 
 This forced teleportation tears at your molecular structure. Your **Health** drains with every shift. If it reaches zero, you will dissolve into the void forever.
