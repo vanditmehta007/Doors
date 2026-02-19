@@ -149,24 +149,24 @@ class BootScene extends Phaser.Scene {
     });
 
     // --- Assets from StartScene ---
-    this.load.audio("bgm", "bgm.mp3");
-    this.load.audio("teleport", "woosh.mp3");
-    this.load.image("key", "orb.png");
-    this.load.image("story_bg", "18157220.jpg");
+    this.load.audio("bgm", "assets/bgm.mp3");
+    this.load.audio("teleport", "assets/woosh.mp3");
+    this.load.image("key", "assets/orb.png");
+    this.load.image("story_bg", "assets/18157220.jpg");
 
     // --- Assets from DoorsScene ---
-    this.load.image("gold_door_img", "c30893ec-9cb3-44cd-92b9-9a2d1bea55d5.jpg");
-    this.load.image("door", "door.png");
-    this.load.image("bg_garden", "teletubbie.jpg");
-    this.load.image("bg_office", "grey.jpg");
-    this.load.image("bg_tron", "tron.jpg");
-    this.load.image("bg_underwater", "underwater2.jpg");
-    this.load.image("bg_upside", "lights.jpg");
-    this.load.image("bg_space", "space-sky-nebula.jpg");
+    this.load.image("gold_door_img", "assets/c30893ec-9cb3-44cd-92b9-9a2d1bea55d5.jpg");
+    this.load.image("door", "assets/door.png");
+    this.load.image("bg_garden", "assets/teletubbie.jpg");
+    this.load.image("bg_office", "assets/grey.jpg");
+    this.load.image("bg_tron", "assets/tron.jpg");
+    this.load.image("bg_underwater", "assets/underwater2.jpg");
+    this.load.image("bg_upside", "assets/lights.jpg");
+    this.load.image("bg_space", "assets/space-sky-nebula.jpg");
 
     // Simulate some load time so the bar is visible
     for (let i = 0; i < 50; i++) {
-      this.load.image('asset' + i, 'door.png');
+      this.load.image('asset' + i, 'assets/orb.png');
     }
   }
 
