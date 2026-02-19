@@ -1,5 +1,5 @@
-﻿const GAME_WIDTH = window.innerWidth;
-const GAME_HEIGHT = window.innerHeight;
+﻿var GAME_WIDTH = window.innerWidth;
+var GAME_HEIGHT = window.innerHeight;
 const MOVE_SPEED = 500;
 
 // --- Mobile Controls ---
@@ -932,6 +932,8 @@ class DoorsScene extends Phaser.Scene {
     // const isMobile = true; 
 
     if (isMobile) {
+      this.input.addPointer(2); // Multi-touch support
+
       // Joystick Left
       this.joystick = new VirtualJoystick(this, 100, GAME_HEIGHT - 80, 50);
 
@@ -1410,3 +1412,47 @@ const config = {
 };
 
 new Phaser.Game(config);
+
+// --- Mobile Orientation Handling ---
+const overlay = document.createElement("div");
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.backgroundColor = "black";
+overlay.style.color = "white";
+overlay.style.display = "none";
+overlay.style.zIndex = "9999";
+overlay.style.flexDirection = "column";
+overlay.style.justifyContent = "center";
+overlay.style.alignItems = "center";
+overlay.style.textAlign = "center";
+overlay.innerHTML = "<h1>Please Rotate Your Device</h1><p>Landscape orientation required.</p>";
+document.body.appendChild(overlay);
+
+function checkOrientation() {
+  const isPortrait = window.innerHeight > window.innerWidth;
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if (isMobile && isPortrait) {
+    overlay.style.display = "flex";
+    if (window.game) window.game.paused = true;
+  } else {
+    overlay.style.display = "none";
+    if (window.game) window.game.paused = false;
+
+    // Update globals on resize
+    GAME_WIDTH = window.innerWidth;
+    GAME_HEIGHT = window.innerHeight;
+  }
+}
+
+window.addEventListener("resize", checkOrientation);
+window.addEventListener("orientationchange", () => {
+  setTimeout(checkOrientation, 500); // Wait for resize to settle
+  // Optional: Reload to fix layout artifacts if needed
+  // window.location.reload(); 
+});
+
+checkOrientation();
