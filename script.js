@@ -1,5 +1,5 @@
-﻿var GAME_WIDTH = window.innerWidth;
-var GAME_HEIGHT = window.innerHeight;
+﻿const GAME_WIDTH = 1280;
+const GAME_HEIGHT = 720;
 const MOVE_SPEED = 500;
 
 // --- Mobile Controls ---
@@ -397,7 +397,7 @@ class StartScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    const instructions = "Use WASD or Arrows to move and E for entering the Golden Door.\nSurvive until you find the orb.\nUse the Proximity Bar to navigate";
+    const instructions = "Use WASD or Arrows or Joystick(Mobile Devices) to move and E for entering the Golden Door.\nSurvive until you find the orb.\nUse the Proximity Bar to navigate";
     const instrText = this.add
       .text(w / 2, h * 0.75, instructions, {
         fontFamily: "monospace",
@@ -815,7 +815,7 @@ class DoorsScene extends Phaser.Scene {
 
     this.goldenDoor = this.physics.add
       .sprite(GAME_WIDTH / 2, GAME_HEIGHT * 0.3, "gold_door_img")
-      .setDisplaySize(300, 300)
+      .setDisplaySize(400, 200)
       .setDepth(3)
       .setVisible(false)
       .setImmovable(true);
@@ -1405,11 +1405,21 @@ const config = {
     },
   },
   scale: {
-    mode: Phaser.Scale.RESIZE,
+    mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: GAME_WIDTH,
+    height: GAME_HEIGHT,
   },
   scene: [BootScene, StartScene, AboutScene, StoryScene, DoorsScene, DeathScene, VictoryScene],
 };
+
+// Ensure mobile viewport is correct
+if (!document.querySelector("meta[name='viewport']")) {
+  const meta = document.createElement("meta");
+  meta.name = "viewport";
+  meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+  document.head.appendChild(meta);
+}
 
 new Phaser.Game(config);
 
@@ -1442,9 +1452,8 @@ function checkOrientation() {
     overlay.style.display = "none";
     if (window.game) window.game.paused = false;
 
-    // Update globals on resize
-    GAME_WIDTH = window.innerWidth;
-    GAME_HEIGHT = window.innerHeight;
+
+    // Globals are fixed for FIT mode
   }
 }
 
