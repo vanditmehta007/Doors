@@ -1,7 +1,5 @@
 ItchIO - https://vandit777.itch.io/door-to-reality
 
-<iframe frameborder="0" src="https://itch.io/embed/4303820?linkback=true&amp;bg_color=050000&amp;fg_color=a4a4a4&amp;link_color=ba0000&amp;border_color=493131" width="552" height="167"><a href="https://vandit777.itch.io/door-to-reality">Door to Reality by vanditmehta</a></iframe>
-
 # Door to Reality: The Story
 
 ## The Explorer's Log
