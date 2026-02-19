@@ -1,4 +1,4 @@
-[![Play on Itch.io](https://img.shields.io/badge/Play_on_Itch.io-FA5C5C?style=for-the-badge&logo=itch.io&logoColor=white)](https://vandit777.itch.io/door-to-reality)
+[![Door to Reality](https://img.shields.io/badge/Door_to_Reality_by_vanditmehta-Play_Now-ba0000?style=for-the-badge&labelColor=050000&logo=itch.io&logoColor=a4a4a4)](https://vandit777.itch.io/door-to-reality)
 
 # Door to Reality: The Story
 
